@@ -1,0 +1,38 @@
+.top_container {
+  display: flex;
+  justify-content: center;
+}
+.class1 {
+  width: 100px;
+  height: 80px;
+  background-color: darkblue;
+  font-size: 200%;
+  border-radius: 10px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 11px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.class1:hover {
+  background-color: blue;
+}
+.TopicHeading {
+  border: none;
+  width: 96%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.writeclass {
+  width: 1300px;
+  height: 660px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  font-size: x-large;
+  font-family: "Times New Roman", Times, serif;
+}

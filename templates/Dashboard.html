@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Dashboard</title>
+    <link href="../static/css/Dashboard.css" rel="stylesheet" />
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <h4>{{message}}</h4>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <div class="top_container">
+      <a href="/noteWrite" style="text-decoration: none">
+        <button type="submit" class="box1">Create</button>
+        <!-- To Create  a new note-->
+      </a>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Search"
+        class="box2"
+        required
+        oninput="filterNotes()"
+      />
+      <a href="/logout" style="text-decoration: none">
+        <button type="submit" class="logout">Log out</button> <!--To Log out-->
+      </a>
+    </div>
+
+    <hr />
+    <div id="notes_container">
+      <ul>
+        {% for note in notes %}
+        <li
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;
+            margin-bottom: 10px;
+          "
+        >
+          <div class="box3">
+            <a
+              href="/edit_note/{{ note.filename }}"
+              style="text-decoration: none"
+            >
+              {{ note.filename.replace('.txt', '') }}
+            </a>
+          </div>
+          <div class="note-actions">
+            <button
+              class="delete-button"
+              style="
+                background-color: rgb(105, 105, 232);
+                border-radius: 4px;
+                color: white;
+              "
+              onclick="deleteNote('{{ note.filename }}')"
+            >
+              Delete
+            </button>
+            <p>Created: {{ note.created }}</p>
+            <p>Modified: {{ note.modified }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <script>
+      function filterNotes() {
+        const searchInput = document
+          .getElementById("title")
+          .value.toLowerCase();
+        const notes = document.querySelectorAll("li");
+        notes.forEach((note) => {
+          const text = note.textContent.toLowerCase();
+          note.style.display = text.includes(searchInput) ? "" : "none";
+        });
+      }
+
+      function deleteNote(filename) {
+        if (confirm("Are you sure you want to delete this note?")) {
+          window.location.href = `/delete_note/${filename}`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../static/css/NoteWrite.css" rel="stylesheet" />
+    <title>MakeNote</title>
+  </head>
+  <body>
+    <form action="/save_note" method="post">
+      <input type="hidden" name="old_title" value="{{ title }}">
+        <button type="submit" class="class1" style="border: none">SAVE</button>
+        <hr> <!-- Line Break-->
+        <label for="title" style="margin-left: 20px;font-size: x-large;">Title:</label>
+        <br>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="TopicHeading"
+          placeholder="Enter your note title"
+          value="{{ title }}"
+          required
+        />
+        <div class="top_container">
+          <textarea
+            id="content"
+            name="content"
+            rows="8"
+            placeholder="Write your note here..."
+            class="writeclass"
+            required
+          >{{ content }}</textarea>
+    </form>
+    
+    </div>
+  </body>
+</html>

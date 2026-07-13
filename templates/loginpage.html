@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Note App</title>
+    <link href="../static/css/loginpage.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="class">
+      <div class="class1">
+        <form action="/login_user" method="post">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="EMAIL"
+            class="inner-div1"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="PASSWORD"
+            class="inner-div1"
+          />
+
+          <button type="submit">Log In</button>
+          {% with messages = get_flashed_messages() %} {% if messages %} {% for
+          message in messages %}
+          <h4>{{message}}</h4>
+          {% endfor %} {% endif %} {% endwith %}
+        </form>
+        <a href="/register" alt="Register"
+          ><div class="inner-div3">REGISTER >></div></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

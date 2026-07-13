@@ -1,0 +1,90 @@
+body {
+  margin: 0; /* Remove default margin */
+  background-image: url("assets/images/Laptop.jpg"); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /*Ensures the image does not repeat*/
+  height: 100vh; /*Makes the background cover the entire viewport height*/
+}
+.class {
+  display: flex;
+  justify-content: center;
+  align-items: center; /*because nowrap(default)*/
+  width: 1360px;
+  height: 760px;
+}
+.class1 {
+  display: flex;
+  width: 498px;
+  height: 409px;
+  background-color: rgba(135, 135, 135, 0.7);
+  /* opacity: 69%; */
+  border-radius: 10%;
+  margin-right: 0px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  margin-right: 20px;
+  /* align-items: center; */
+}
+.inner-div1,
+.inner-div2 {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  width: 430px; /* Width of inner divs */
+  height: 88px; /* Height of inner divs */
+  background-color: white; /* Example color for inner divs */
+  margin-bottom: 20px; /* Space between the two divs */
+  border-radius: 10px; /* Optional: Rounded corners for inner divs */
+  opacity: 90%;
+  font-size: 35.5pt;
+  color: rgba(135, 135, 135, 100%);
+  border: none; /* Remove default border */
+  outline: none; /* Remove black outline on focus */
+}
+.inner-div1::placeholder {
+  color: rgba(135, 135, 135, 100%); /* Style the placeholder */
+  text-align: center; /* Ensure placeholder text is centered */
+  font-family: serif;
+}
+.inner-div1:focus {
+  font-size: 15pt; /* Decrease font size when focused */
+  text-align: left; /* Optional: Align text left when typing */
+}
+
+.inner-div3 {
+  margin-top: -50px;
+  width: 430px;
+  font-size: x-large;
+}
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Optional: Customize the color or hover styles */
+a:hover {
+  color: red; /* Change color on hover */
+}
+
+.class1 button {
+  margin-left: 150px;
+  background-color: #007bff;
+  width: 25%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.class1 button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+.class1 button:hover {
+  background-color: #0056b3;
+}
