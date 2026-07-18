@@ -1,8 +1,16 @@
 from flask import Blueprint, render_template, request, redirect, flash, session
 from cursor import cursor, db
 
-auth = Blueprint("auth", __name__)
+# Blueprint() in Flask is a way to organize a large Flask application into smaller, reusable modules. 
+# Instead of putting all routes, functions, and logic into one app.py file, you can split them into separate 
+# files.
 
+# Flask() = the main application.
+# Blueprint() = a mini-application that contains related routes and functionality, which is later attached to 
+# the main application.
+
+auth = Blueprint("auth", __name__) #  'auth' argument is name of the Blueprint, must be unique within the app.
+# auth is Blueprint obj
 @auth.route("/")
 def login_page():
     return render_template("loginpage.html")

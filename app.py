@@ -5,7 +5,8 @@ from notes import notes
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
-app.register_blueprint(auth)
+app.register_blueprint(auth) # Flask copies all the routes stored in the blueprint into the application's 
+# routing table. After registration, requests to /login_user are handled by the login_user() function.
 app.register_blueprint(notes)
 
 if __name__ == "__main__":
